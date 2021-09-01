@@ -7,6 +7,7 @@ import BottomRouter from './BottomRouter';
 import ApiDetailScreen from '../screens/ApiDetailScreen';
 import AddChannelScreen from '../screens/ChannelScreen/add';
 import UpdateChannelScreen from '../screens/ChannelScreen/update';
+import ChartScreen from '../screens/ChartScreen';
 
 const Stack = createStackNavigator();
 const Router = (props) => (
@@ -48,6 +49,13 @@ const Router = (props) => (
       component={UpdateChannelScreen}
       options={{
         title: 'Update Channel',
+      }}
+    />
+    <Stack.Screen
+      name="ChartScreen"
+      component={ChartScreen}
+      options={{
+        title: 'Chart Channel',
       }}
     />
   </Stack.Navigator>
