@@ -24,6 +24,7 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'Temperature',
               api: item.api,
+              id: 3,
             });
           }}
           >
@@ -42,7 +43,15 @@ const HomeMenu = ({ item }) => {
               </Text>
             </Card>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ChartScreen', {
+              channel: item.name,
+              sensor: 'NH2',
+              api: item.api,
+              id: 4,
+            });
+          }}
+          >
             <Card style={styles.menu}>
               <SLIcon
                 name="chemistry"
@@ -58,7 +67,15 @@ const HomeMenu = ({ item }) => {
               </Text>
             </Card>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ChartScreen', {
+              channel: item.name,
+              sensor: 'H2S',
+              api: item.api,
+              id: 7,
+            });
+          }}
+          >
             <Card style={styles.menu}>
               <SLIcon
                 name="chemistry"
@@ -76,7 +93,15 @@ const HomeMenu = ({ item }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ChartScreen', {
+              channel: item.name,
+              sensor: 'Humidity',
+              api: item.api,
+              id: 5,
+            });
+          }}
+          >
             <Card style={styles.menu}>
               <MCIcon
                 name="air-humidifier"
@@ -92,7 +117,15 @@ const HomeMenu = ({ item }) => {
               </Text>
             </Card>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ChartScreen', {
+              channel: item.name,
+              sensor: 'CO',
+              api: item.api,
+              id: 5,
+            });
+          }}
+          >
             <Card style={styles.menu}>
               <SLIcon
                 name="chemistry"
@@ -108,7 +141,15 @@ const HomeMenu = ({ item }) => {
               </Text>
             </Card>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ChartScreen', {
+              channel: item.name,
+              sensor: 'Dust Particles',
+              api: item.api,
+              id: 8,
+            });
+          }}
+          >
             <Card style={styles.menu}>
               <SLIcon
                 name="chemistry"
@@ -126,7 +167,15 @@ const HomeMenu = ({ item }) => {
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ChartScreen', {
+              channel: item.name,
+              sensor: 'NO2',
+              api: item.api,
+              id: 3,
+            });
+          }}
+          >
             <Card style={styles.menu}>
               <SLIcon name="chemistry" color={colorPrimary} size={sizeMenu} />
               <Text
@@ -138,7 +187,15 @@ const HomeMenu = ({ item }) => {
               </Text>
             </Card>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('ChartScreen', {
+              channel: item.name,
+              sensor: 'SO2',
+              api: item.api,
+              id: 6,
+            });
+          }}
+          >
             <Card style={styles.menu}>
               <SLIcon
                 name="chemistry"
