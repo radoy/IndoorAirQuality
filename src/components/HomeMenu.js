@@ -24,7 +24,8 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'Temperature',
               api: item.api,
-              id: 3,
+              apiKey: item.apiKey,
+              id: 1,
             });
           }}
           >
@@ -48,6 +49,7 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'NH2',
               api: item.api,
+              apiKey: item.apiKey,
               id: 4,
             });
           }}
@@ -72,6 +74,7 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'H2S',
               api: item.api,
+              apiKey: item.apiKey,
               id: 7,
             });
           }}
@@ -98,7 +101,8 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'Humidity',
               api: item.api,
-              id: 5,
+              apiKey: item.apiKey,
+              id: 2,
             });
           }}
           >
@@ -122,6 +126,7 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'CO',
               api: item.api,
+              apiKey: item.apiKey,
               id: 5,
             });
           }}
@@ -146,6 +151,7 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'Dust Particles',
               api: item.api,
+              apiKey: item.apiKey,
               id: 8,
             });
           }}
@@ -172,6 +178,7 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'NO2',
               api: item.api,
+              apiKey: item.apiKey,
               id: 3,
             });
           }}
@@ -192,6 +199,7 @@ const HomeMenu = ({ item }) => {
               channel: item.name,
               sensor: 'SO2',
               api: item.api,
+              apiKey: item.apiKey,
               id: 6,
             });
           }}

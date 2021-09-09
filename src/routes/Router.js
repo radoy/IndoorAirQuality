@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import {
+  Alert, Button, Text, TouchableOpacity,
+} from 'react-native';
+import FaIcon from 'react-native-vector-icons/FontAwesome';
 import SplashScreen from '../screens/SplashScreen';
 import LoginScreen from '../screens/LoginScreen';
 import BottomRouter from './BottomRouter';
@@ -8,6 +12,7 @@ import ApiDetailScreen from '../screens/ApiDetailScreen';
 import AddChannelScreen from '../screens/ChannelScreen/add';
 import UpdateChannelScreen from '../screens/ChannelScreen/update';
 import ChartScreen from '../screens/ChartScreen';
+import AddChartScreen from '../screens/AddChartScreen';
 
 const Stack = createStackNavigator();
 const Router = (props) => (
@@ -54,8 +59,27 @@ const Router = (props) => (
     <Stack.Screen
       name="ChartScreen"
       component={ChartScreen}
+      options={({ navigation, route }) => ({
+        headerTitle: 'Chart Channel',
+        headerRight: () => (
+          <Button
+            onPress={() => {
+              navigation.navigate('AddChartScreen', {
+                id: route.params.id,
+                apiKey: route.params.apiKey,
+              });
+            }}
+            title="Tambah"
+            color="#000"
+          />
+        ),
+      })}
+    />
+    <Stack.Screen
+      name="AddChartScreen"
+      component={AddChartScreen}
       options={{
-        title: 'Chart Channel',
+        title: 'Tambah Data',
       }}
     />
   </Stack.Navigator>

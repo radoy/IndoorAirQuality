@@ -13,12 +13,15 @@ const AddChannelScreen = ({ navigation }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState('');
   const [api, setApi] = useState('');
+  const [apiKey, setApiKey] = useState('');
   const [channelList, setChannelList] = useState([]);
 
   const saveData = async () => {
     setIsLoading(true);
 
-    let data = [{ id: Date.now(), name, api }];
+    let data = [{
+      id: Date.now(), name, api, apiKey,
+    }];
     if (channelList !== null) {
       data = [...channelList, ...data];
     }
@@ -41,7 +44,6 @@ const AddChannelScreen = ({ navigation }) => {
   useEffect(async () => {
     // await ASSet('channel', []);
     await ASGet('channel').then((response) => {
-      console.log('local storage: ', response);
       setChannelList(JSON.parse(response));
     });
   }, []);
@@ -62,6 +64,14 @@ const AddChannelScreen = ({ navigation }) => {
         value={api}
         onChangeText={(value) => {
           setApi(value);
+        }}
+      />
+      <Gap height={20} />
+      <Input
+        label="API Key"
+        value={apiKey}
+        onChangeText={(value) => {
+          setApiKey(value);
         }}
       />
       <Gap height={20} />

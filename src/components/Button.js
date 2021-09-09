@@ -4,18 +4,18 @@ import {
 } from 'react-native';
 import { colorLoading, colorPrimary } from '../styles/colors';
 
-const Button = ({ onPress, title, isLoading }) => {
-  if (isLoading) {
+const Button = (props) => {
+  if (props.isLoading) {
     return (
-      <TouchableOpacity style={styles.buttonLoading}>
+      <TouchableOpacity style={{ ...styles.buttonLoading, ...props.style }}>
         <Text style={styles.text}>Sedang diproses...</Text>
       </TouchableOpacity>
     );
   }
 
   return (
-    <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>{title}</Text>
+    <TouchableOpacity style={{ ...styles.button, ...props.style }} onPress={props.onPress}>
+      <Text style={styles.text}>{props.title}</Text>
     </TouchableOpacity>
   );
 };

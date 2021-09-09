@@ -40,10 +40,10 @@ const ChannelScreen = ({ navigation }) => {
 
   useEffect(async () => {
     if (isFocused) {
+      setIsLoading(true);
       await ASGet('channel')
         .then((response) => {
           if (response) {
-            console.log('-- render --> ', isFocused);
             setDataSource(JSON.parse(response));
           }
         })
