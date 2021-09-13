@@ -147,7 +147,7 @@ const HomeMenu = ({ item }) => {
             </Card>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {
-            navigation.navigate('ChartScreen', {
+            navigation.navigate('Chart8Screen', {
               channel: item.name,
               sensor: 'Dust Particles',
               api: item.api,

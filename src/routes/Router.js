@@ -13,6 +13,7 @@ import AddChannelScreen from '../screens/ChannelScreen/add';
 import UpdateChannelScreen from '../screens/ChannelScreen/update';
 import ChartScreen from '../screens/ChartScreen';
 import AddChartScreen from '../screens/AddChartScreen';
+import Chart8Screen from '../screens/Chart8Screen';
 
 const Stack = createStackNavigator();
 const Router = (props) => (
@@ -61,6 +62,25 @@ const Router = (props) => (
       component={ChartScreen}
       options={({ navigation, route }) => ({
         headerTitle: 'Chart Channel',
+        headerRight: () => (
+          <Button
+            onPress={() => {
+              navigation.navigate('AddChartScreen', {
+                id: route.params.id,
+                apiKey: route.params.apiKey,
+              });
+            }}
+            title="Tambah"
+            color="#000"
+          />
+        ),
+      })}
+    />
+    <Stack.Screen
+      name="Chart8Screen"
+      component={Chart8Screen}
+      options={({ navigation, route }) => ({
+        headerTitle: 'Chart Channel (8)',
         headerRight: () => (
           <Button
             onPress={() => {

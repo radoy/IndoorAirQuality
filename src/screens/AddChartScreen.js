@@ -21,7 +21,7 @@ const AddChartScreen = ({ navigation, route }) => {
       .then((response) => {
         if (response && response.data[`field${route.params.id}`]) {
           showSuccess('Data berhasil dikirim');
-          navigation.navigate('ChartScreen');
+          navigation.goBack();
         }
       })
       .catch((response) => {
